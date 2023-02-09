@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings_style.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+        <!-- If IE use the latest rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Set the page to the width of the device and set the zoon level -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Settings</title>
+    <style>
+        <!--h1, h2, h3, p {-->
+            <!--font-family: Verdana, Geneva, sans-serif;-->
+        <!--}-->
+        #Home {
+            float: right;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="tab">
+   <button id="SB1" class="tablinks" onclick="openUnit(event, 'Unit 1')">Unit 1</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 2')">Unit 2</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 3')">Unit 3</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 4')">Unit 4</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 5')">Unit 5</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 6')">Unit 6</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 7')">Unit 7</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 8')">Unit 8</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 9')">Unit 9</button>
+   <button class="tablinks" onclick="openUnit(event, 'Unit 10')">Unit 10</button>
+   <button class="tablinks" onclick="openUnit(event, 'Network')">Network</button>
+   <button id="Home" class="tablinks" onclick="openUnit(event, 'Home')">Home</button>
+</div>
+
+<!-- Tab content -->
+<div id="Unit 1" class="tabcontent">
+  <h3>Unit 1</h3>
+        <!--<h2 style = "text-align: center;">Settings Form</h2>-->
+      <!--<form action = "http://192.168.0.3:5000/settings" method = post>-->
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">
+                     {{ message }}
+                  </div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         <!--<legend>Unit 1 Settings</legend>-->
+                        {{ form_1.hidden_tag() }}
+                        <td>{{ form_1.U1_S1.label }}</td>
+                        <td>{{ form_1.U1_S1 }}</td>
+                        {% for error in form_1.U1_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S2.label }}</td>
+                        <td>{{ form_1.U1_S2 }}</td>
+                        {% for error in form_1.U1_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S3.label }}</td>
+                        <td>{{ form_1.U1_S3 }}</td>
+                        {% for error in form_1.U1_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S4.label }}</td>
+                        <td>{{ form_1.U1_S4 }}</td>
+                        {% for error in form_1.U1_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S5.label }}</td>
+                        <td>{{ form_1.U1_S5 }}</td>
+                        {% for error in form_1.U1_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S6.label }}</td>
+                        <td>{{ form_1.U1_S6 }}</td>
+                        {% for error in form_1.U1_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S7.label }}</td>
+                        <td>{{ form_1.U1_S7 }}</td>
+                        {% for error in form_1.U1_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S8.label }}</td>
+                        <td>{{ form_1.U1_S8 }}</td>
+                        {% for error in form_1.U1_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S9.label }}</td>
+                        <td>{{ form_1.U1_S9 }}</td>
+                        {% for error in form_1.U1_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S10.label }}</td>
+                        <td>{{ form_1.U1_S10 }}</td>
+                        {% for error in form_1.U1_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S11.label }}</td>
+                        <td>{{ form_1.U1_S11 }}</td>
+                        {% for error in form_1.U1_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S12.label }}</td>
+                        <td>{{ form_1.U1_S12 }}</td>
+                        {% for error in form_1.U1_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S13.label }}</td>
+                        <td>{{ form_1.U1_S13 }}</td>
+                        {% for error in form_1.U1_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_1.U1_S14.label }}</td>
+                        <td>{{ form_1.U1_S14 }}</td>
+                        {% for error in form_1.U1_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+<div id="Unit 2" class="tabcontent">
+  <h3>Unit 2</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        
+                        <tr>
+                           {{ form_2.hidden_tag() }}
+                        <td>{{ form_2.U2_S1.label }}</td>
+                        <td>{{ form_2.U2_S1 }}</td>
+                        {% for error in form_2.U2_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S2.label }}</td>
+                        <td>{{ form_2.U2_S2 }}</td>
+                        {% for error in form_2.U2_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S3.label }}</td>
+                        <td>{{ form_2.U2_S3 }}</td>
+                        {% for error in form_2.U2_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S4.label }}</td>
+                        <td>{{ form_2.U2_S4 }}</td>
+                        {% for error in form_2.U2_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S5.label }}</td>
+                        <td>{{ form_2.U2_S5 }}</td>
+                        {% for error in form_2.U2_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S6.label }}</td>
+                        <td>{{ form_2.U2_S6 }}</td>
+                        {% for error in form_2.U2_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S7.label }}</td>
+                        <td>{{ form_2.U2_S7}}</td>
+                        {% for error in form_2.U2_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S8.label }}</td>
+                        <td>{{ form_2.U2_S8 }}</td>
+                        {% for error in form_2.U2_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S9.label }}</td>
+                        <td>{{ form_2.U2_S9 }}</td>
+                        {% for error in form_2.U2_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S10.label }}</td>
+                        <td>{{ form_2.U2_S10 }}</td>
+                        {% for error in form_2.U2_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S11.label }}</td>
+                        <td>{{ form_2.U2_S11 }}</td>
+                        {% for error in form_2.U2_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S12.label }}</td>
+                        <td>{{ form_2.U2_S12 }}</td>
+                        {% for error in form_2.U2_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S13.label }}</td>
+                        <td>{{ form_2.U2_S13 }}</td>
+                        {% for error in form_2.U2_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_2.U2_S14.label }}</td>
+                        <td>{{ form_2.U2_S14 }}</td>
+                        {% for error in form_2.U2_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+<div id="Unit 3" class="tabcontent">
+  <h3>Unit 3</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_3.hidden_tag() }}
+                        <td>{{ form_3.U3_S1.label }}</td>
+                        <td>{{ form_3.U3_S1 }}</td>
+                        {% for error in form_3.U3_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S2.label }}</td>
+                        <td>{{ form_3.U3_S2 }}</td>
+                        {% for error in form_3.U3_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S3.label }}</td>
+                        <td>{{ form_3.U3_S3 }}</td>
+                        {% for error in form_3.U3_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S4.label }}</td>
+                        <td>{{ form_3.U3_S4 }}</td>
+                        {% for error in form_3.U3_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S5.label }}</td>
+                        <td>{{ form_3.U3_S5 }}</td>
+                        {% for error in form_3.U3_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S6.label }}</td>
+                        <td>{{ form_3.U3_S6 }}</td>
+                        {% for error in form_3.U3_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S7.label }}</td>
+                        <td>{{ form_3.U3_S7 }}</td>
+                        {% for error in form_3.U3_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S8.label }}</td>
+                        <td>{{ form_3.U3_S8 }}</td>
+                        {% for error in form_3.U3_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S9.label }}</td>
+                        <td>{{ form_3.U3_S9 }}</td>
+                        {% for error in form_3.U3_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S10.label }}</td>
+                        <td>{{ form_3.U3_S10 }}</td>
+                        {% for error in form_3.U3_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S11.label }}</td>
+                        <td>{{ form_3.U3_S11 }}</td>
+                        {% for error in form_3.U3_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S12.label }}</td>
+                        <td>{{ form_3.U3_S12 }}</td>
+                        {% for error in form_3.U3_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S13.label }}</td>
+                        <td>{{ form_3.U3_S13 }}</td>
+                        {% for error in form_3.U3_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_3.U3_S14.label }}</td>
+                        <td>{{ form_3.U3_S14 }}</td>
+                        {% for error in form_3.U3_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+<div id="Unit 4" class="tabcontent">
+  <h3>Unit 4</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_4.hidden_tag() }}
+                        <td>{{ form_4.U4_S1.label }}</td>
+                        <td>{{ form_4.U4_S1 }}</td>
+                        {% for error in form_4.U4_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S2.label }}</td>
+                        <td>{{ form_4.U4_S2 }}</td>
+                        {% for error in form_4.U4_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S3.label }}</td>
+                        <td>{{ form_4.U4_S3 }}</td>
+                        {% for error in form_4.U4_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S4.label }}</td>
+                        <td>{{ form_4.U4_S4 }}</td>
+                        {% for error in form_4.U4_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S5.label }}</td>
+                        <td>{{ form_4.U4_S5 }}</td>
+                        {% for error in form_4.U4_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S6.label }}</td>
+                        <td>{{ form_4.U4_S6 }}</td>
+                        {% for error in form_4.U4_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S7.label }}</td>
+                        <td>{{ form_4.U4_S7 }}</td>
+                        {% for error in form_4.U4_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S8.label }}</td>
+                        <td>{{ form_4.U4_S8 }}</td>
+                        {% for error in form_4.U4_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S9.label }}</td>
+                        <td>{{ form_4.U4_S9 }}</td>
+                        {% for error in form_4.U4_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S10.label }}</td>
+                        <td>{{ form_4.U4_S10 }}</td>
+                        {% for error in form_4.U4_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S11.label }}</td>
+                        <td>{{ form_4.U4_S11 }}</td>
+                        {% for error in form_4.U4_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S12.label }}</td>
+                        <td>{{ form_4.U4_S12 }}</td>
+                        {% for error in form_4.U4_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S13.label }}</td>
+                        <td>{{ form_4.U4_S13 }}</td>
+                        {% for error in form_4.U4_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_4.U4_S14.label }}</td>
+                        <td>{{ form_4.U4_S14 }}</td>
+                        {% for error in form_4.U4_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+         </fieldset>
+      </form>
+</div>
+
+
+<div id="Unit 5" class="tabcontent">
+  <h3>Unit 5</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_5.hidden_tag() }}
+                        <td>{{ form_5.U5_S1.label }}</td>
+                        <td>{{ form_5.U5_S1 }}</td>
+                        {% for error in form_5.U5_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S2.label }}</td>
+                        <td>{{ form_5.U5_S2 }}</td>
+                        {% for error in form_5.U5_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S3.label }}</td>
+                        <td>{{ form_5.U5_S3 }}</td>
+                        {% for error in form_5.U5_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S4.label }}</td>
+                        <td>{{ form_5.U5_S4 }}</td>
+                        {% for error in form_5.U5_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S5.label }}</td>
+                        <td>{{ form_5.U5_S5 }}</td>
+                        {% for error in form_5.U5_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S6.label }}</td>
+                        <td>{{ form_5.U5_S6 }}</td>
+                        {% for error in form_5.U5_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S7.label }}</td>
+                        <td>{{ form_5.U5_S7 }}</td>
+                        {% for error in form_5.U5_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S8.label }}</td>
+                        <td>{{ form_5.U5_S8 }}</td>
+                        {% for error in form_5.U5_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S9.label }}</td>
+                        <td>{{ form_5.U5_S9 }}</td>
+                        {% for error in form_5.U5_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S10.label }}</td>
+                        <td>{{ form_5.U5_S10 }}</td>
+                        {% for error in form_5.U5_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S11.label }}</td>
+                        <td>{{ form_5.U5_S11 }}</td>
+                        {% for error in form_5.U5_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S12.label }}</td>
+                        <td>{{ form_5.U5_S12 }}</td>
+                        {% for error in form_5.U5_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S13.label }}</td>
+                        <td>{{ form_5.U5_S13 }}</td>
+                        {% for error in form_5.U5_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_5.U5_S14.label }}</td>
+                        <td>{{ form_5.U5_S14 }}</td>
+                        {% for error in form_5.U5_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+<div id="Unit 6" class="tabcontent">
+  <h3>Unit 6</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_6.hidden_tag() }}
+                        <td>{{ form_6.U6_S1.label }}</td>
+                        <td>{{ form_6.U6_S1 }}</td>
+                        {% for error in form_6.U6_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S2.label }}</td>
+                        <td>{{ form_6.U6_S2 }}</td>
+                        {% for error in form_6.U6_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S3.label }}</td>
+                        <td>{{ form_6.U6_S3 }}</td>
+                        {% for error in form_6.U6_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S4.label }}</td>
+                        <td>{{ form_6.U6_S4 }}</td>
+                        {% for error in form_6.U6_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S5.label }}</td>
+                        <td>{{ form_6.U6_S5 }}</td>
+                        {% for error in form_6.U6_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S6.label }}</td>
+                        <td>{{ form_6.U6_S6 }}</td>
+                        {% for error in form_6.U6_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S7.label }}</td>
+                        <td>{{ form_6.U6_S7 }}</td>
+                        {% for error in form_6.U6_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S8.label }}</td>
+                        <td>{{ form_6.U6_S8 }}</td>
+                        {% for error in form_6.U6_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S9.label }}</td>
+                        <td>{{ form_6.U6_S9 }}</td>
+                        {% for error in form_6.U6_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S10.label }}</td>
+                        <td>{{ form_6.U6_S10 }}</td>
+                        {% for error in form_6.U6_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S11.label }}</td>
+                        <td>{{ form_6.U6_S11 }}</td>
+                        {% for error in form_6.U6_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S12.label }}</td>
+                        <td>{{ form_6.U6_S12 }}</td>
+                        {% for error in form_6.U6_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S13.label }}</td>
+                        <td>{{ form_6.U6_S13 }}</td>
+                        {% for error in form_6.U6_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_6.U6_S14.label }}</td>
+                        <td>{{ form_6.U6_S14 }}</td>
+                        {% for error in form_6.U6_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+<div id="Unit 7" class="tabcontent">
+  <h3>Unit 7</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_7.hidden_tag() }}
+                        <td>{{ form_7.U7_S1.label }}</td>
+                        <td>{{ form_7.U7_S1 }}</td>
+                        {% for error in form_7.U7_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S2.label }}</td>
+                        <td>{{ form_7.U7_S2 }}</td>
+                        {% for error in form_7.U7_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S3.label }}</td>
+                        <td>{{ form_7.U7_S3 }}</td>
+                        {% for error in form_7.U7_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S4.label }}</td>
+                        <td>{{ form_7.U7_S4 }}</td>
+                        {% for error in form_7.U7_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S5.label }}</td>
+                        <td>{{ form_7.U7_S5 }}</td>
+                        {% for error in form_7.U7_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S6.label }}</td>
+                        <td>{{ form_7.U7_S6 }}</td>
+                        {% for error in form_7.U7_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S7.label }}</td>
+                        <td>{{ form_7.U7_S7 }}</td>
+                        {% for error in form_7.U7_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S8.label }}</td>
+                        <td>{{ form_7.U7_S8 }}</td>
+                        {% for error in form_7.U7_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S9.label }}</td>
+                        <td>{{ form_7.U7_S9 }}</td>
+                        {% for error in form_7.U7_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S10.label }}</td>
+                        <td>{{ form_7.U7_S10 }}</td>
+                        {% for error in form_7.U7_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S11.label }}</td>
+                        <td>{{ form_7.U7_S11 }}</td>
+                        {% for error in form_7.U7_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S12.label }}</td>
+                        <td>{{ form_7.U7_S12 }}</td>
+                        {% for error in form_7.U7_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S13.label }}</td>
+                        <td>{{ form_7.U7_S13 }}</td>
+                        {% for error in form_7.U7_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_7.U7_S14.label }}</td>
+                        <td>{{ form_7.U7_S14 }}</td>
+                        {% for error in form_7.U7_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+<div id="Unit 8" class="tabcontent">
+  <h3>Unit 8</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                           {{ form_8.hidden_tag() }}
+                        <td>{{ form_8.U8_S1.label }}</td>
+                        <td>{{ form_8.U8_S1 }}</td>
+                        {% for error in form_8.U8_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S2.label }}</td>
+                        <td>{{ form_8.U8_S2 }}</td>
+                        {% for error in form_8.U8_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S3.label }}</td>
+                        <td>{{ form_8.U8_S3 }}</td>
+                        {% for error in form_8.U8_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S4.label }}</td>
+                        <td>{{ form_8.U8_S4 }}</td>
+                        {% for error in form_8.U8_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S5.label }}</td>
+                        <td>{{ form_8.U8_S5 }}</td>
+                        {% for error in form_8.U8_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S6.label }}</td>
+                        <td>{{ form_8.U8_S6 }}</td>
+                        {% for error in form_8.U8_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S7.label }}</td>
+                        <td>{{ form_8.U8_S7 }}</td>
+                        {% for error in form_8.U8_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S8.label }}</td>
+                        <td>{{ form_8.U8_S8 }}</td>
+                        {% for error in form_8.U8_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S9.label }}</td>
+                        <td>{{ form_8.U8_S9 }}</td>
+                        {% for error in form_8.U8_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S10.label }}</td>
+                        <td>{{ form_8.U8_S10 }}</td>
+                        {% for error in form_8.U8_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S11.label }}</td>
+                        <td>{{ form_8.U8_S11 }}</td>
+                        {% for error in form_8.U8_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S12.label }}</td>
+                        <td>{{ form_8.U8_S12 }}</td>
+                        {% for error in form_8.U8_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S13.label }}</td>
+                        <td>{{ form_8.U8_S13 }}</td>
+                        {% for error in form_8.U8_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_8.U8_S14.label }}</td>
+                        <td>{{ form_8.U8_S14 }}</td>
+                        {% for error in form_8.U8_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                            <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+
+<div id="Unit 9" class="tabcontent">
+  <h3>Unit 9</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_9.hidden_tag() }}
+                        <td>{{ form_9.U9_S1.label }}</td>
+                        <td>{{ form_9.U9_S1 }}</td>
+                        {% for error in form_9.U9_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S2.label }}</td>
+                        <td>{{ form_9.U9_S2 }}</td>
+                        {% for error in form_9.U9_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S3.label }}</td>
+                        <td>{{ form_9.U9_S3 }}</td>
+                        {% for error in form_9.U9_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S4.label }}</td>
+                        <td>{{ form_9.U9_S4 }}</td>
+                        {% for error in form_9.U9_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S5.label }}</td>
+                        <td>{{ form_9.U9_S5 }}</td>
+                        {% for error in form_9.U9_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S6.label }}</td>
+                        <td>{{ form_9.U9_S6 }}</td>
+                        {% for error in form_9.U9_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S7.label }}</td>
+                        <td>{{ form_9.U9_S7 }}</td>
+                        {% for error in form_9.U9_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S8.label }}</td>
+                        <td>{{ form_9.U9_S8 }}</td>
+                        {% for error in form_9.U9_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S9.label }}</td>
+                        <td>{{ form_9.U9_S9 }}</td>
+                        {% for error in form_9.U9_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S10.label }}</td>
+                        <td>{{ form_9.U9_S10 }}</td>
+                        {% for error in form_9.U9_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S11.label }}</td>
+                        <td>{{ form_9.U9_S11 }}</td>
+                        {% for error in form_9.U9_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S12.label }}</td>
+                        <td>{{ form_9.U9_S12 }}</td>
+                        {% for error in form_9.U9_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S13.label }}</td>
+                        <td>{{ form_9.U9_S13 }}</td>
+                        {% for error in form_9.U9_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_9.U9_S14.label }}</td>
+                        <td>{{ form_9.U9_S14 }}</td>
+                        {% for error in form_9.U9_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                            <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+
+<div id="Unit 10" class="tabcontent">
+  <h3>Unit 10</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+                     <table class="table">
+                        <tr>
+                         {{ form_10.hidden_tag() }}
+                        <td>{{ form_10.U10_S1.label }}</td>
+                        <td>{{ form_10.U10_S1 }}</td>
+                        {% for error in form_10.U10_S1.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S2.label }}</td>
+                        <td>{{ form_10.U10_S2 }}</td>
+                        {% for error in form_10.U10_S2.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S3.label }}</td>
+                        <td>{{ form_10.U10_S3 }}</td>
+                        {% for error in form_10.U10_S3.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S4.label }}</td>
+                        <td>{{ form_10.U10_S4 }}</td>
+                        {% for error in form_10.U10_S4.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S5.label }}</td>
+                        <td>{{ form_10.U10_S5 }}</td>
+                        {% for error in form_10.U10_S5.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S6.label }}</td>
+                        <td>{{ form_10.U10_S6 }}</td>
+                        {% for error in form_10.U10_S6.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S7.label }}</td>
+                        <td>{{ form_10.U10_S7 }}</td>
+                        {% for error in form_10.U10_S7.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S8.label }}</td>
+                        <td>{{ form_10.U10_S8 }}</td>
+                        {% for error in form_10.U10_S8.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S9.label }}</td>
+                        <td>{{ form_10.U10_S9 }}</td>
+                        {% for error in form_10.U10_S9.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S10.label }}</td>
+                        <td>{{ form_10.U10_S10 }}</td>
+                        {% for error in form_10.U10_S10.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S11.label }}</td>
+                        <td>{{ form_10.U10_S11 }}</td>
+                        {% for error in form_10.U10_S11.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S12.label }}</td>
+                        <td>{{ form_10.U10_S12 }}</td>
+                        {% for error in form_10.U10_S12.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S13.label }}</td>
+                        <td>{{ form_10.U10_S13 }}</td>
+                        {% for error in form_10.U10_S13.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_10.U10_S14.label }}</td>
+                        <td>{{ form_10.U10_S14 }}</td>
+                        {% for error in form_10.U10_S14.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                     </table>
+                         <div class="clearfix">
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                        </div>
+
+                 </div>
+             </div>
+
+         </fieldset>
+      </form>
+</div>
+
+
+<div id="Network" class="tabcontent">
+  <h3>Network Settings</h3>
+      <form method = post>
+         <fieldset>
+             <div class = tabform>
+                 <div class="container">
+
+                     <table class="table">
+                        <tr>
+                        {{ form_Nw.hidden_tag() }}
+                        <td>{{ form_Nw.interface.label }}</td></td>
+                        <td>{{ form_Nw.interface }}</td>
+                        {% for error in form_Nw.interface.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+
+                        <td>{{ form_Nw.ip.label }}</td></td>
+                        <td>{{ form_Nw.ip }}</td>
+                        {% for error in form_Nw.ip.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_Nw.port.label }}</td></td>
+                        <td>{{ form_Nw.port }}</td>
+                        {% for error in form_Nw.port.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_Nw.router.label }}</td></td>
+                        <td>{{ form_Nw.router }}</td>
+                        {% for error in form_Nw.router.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_Nw.DNS.label }}</td></td>
+                        <td>{{ form_Nw.DNS }}</td>
+                        {% for error in form_Nw.DNS.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_Nw.SSID.label }}</td></td>
+                        <td>{{ form_Nw.SSID }}</td>
+                        {% for error in form_Nw.SSID.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+                        <tr>
+                        <td>{{ form_Nw.password.label }}</td></td>
+                        <td>{{ form_Nw.password }}</td>
+                        {% for error in form_Nw.password.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                        </tr>
+
+                     </table>
+                      <div class="clearfix">
+                          <span class="float-left"><button type="connect" class="btn btn-outline-success">Connect</button></span>
+                          <span class="float-left"><button type="disconnect" class="btn btn-outline-success">Disconnect</button></span>
+                          <span class="float-right"><button type="submit" class="btn btn-outline-success">Save</button></span>
+                          <span class="float-right"><button type="reboot" class="btn btn-outline-success">Reboot</button></span>
+                     </div>
+
+                 </div>
+             </div>
+         </fieldset>
+      </form>
+</div>
+
+
+
+
+<script>
+function openUnit(evt, unitName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(unitName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+// Get the element with id="SB1" and click on it
+document.getElementById("SB1").click();
+
+</script>
+
+<script type="text/javascript">
+    document.getElementById("Home").onclick = function () {
+        location.href = "/";
+    };
+</script>
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<WebserverPort>8888
+<StreamPort>8889
+<ProbeList>['AAA1', 'AAA2', 'AAA3', 'AAA4', 'AAA5']
+<RelayID>RRR1
+<RelayChannels>['Relay1', 'Relay2', 'Relay3', 'Relay4']
+<TempOffset>1
+<HumOffset>1
+<CycleCount>200
